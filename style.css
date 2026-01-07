@@ -33,7 +33,7 @@ header {
 }
 header h1 {
     color: #2d3436;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 header .subtitle {
@@ -55,7 +55,7 @@ header .subtitle {
     font-size: 1rem;
     resize: vertical;
     transition: all 0.3s ease;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .input-area textarea:focus {
     outline: none;
@@ -63,12 +63,29 @@ header .subtitle {
     box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
 }
 
+/* 课程提示 */
+.course-hint {
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #1976d2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.course-hint i {
+    font-size: 1.2rem;
+}
+
+/* 按钮组 */
 .button-group {
     display: flex;
     gap: 15px;
 }
 button {
-    padding: 15px 30px;
+    padding: 15px 25px;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
@@ -89,6 +106,12 @@ button {
     transform: translateY(-3px);
     box-shadow: 0 7px 14px rgba(108, 92, 231, 0.3);
 }
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
 .btn-secondary {
     background-color: #f1f2f6;
     color: #636e72;
@@ -96,6 +119,15 @@ button {
 }
 .btn-secondary:hover {
     background-color: #dfe4ea;
+}
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #00b894;
+    color: #00b894;
+    flex-grow: 1;
+}
+.btn-outline:hover {
+    background-color: rgba(0, 184, 148, 0.1);
 }
 
 /* 回复区域 */
@@ -120,11 +152,32 @@ button {
 .placeholder-text {
     color: #b2bec3;
     font-style: italic;
+    text-align: center;
+    padding: 20px;
 }
 .ai-answer {
     color: #2d3436;
     line-height: 1.7;
-    white-space: pre-wrap; /* 保留文本格式，如换行 */
+    white-space: pre-wrap;
+}
+.ai-answer ul, .ai-answer ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.ai-answer li {
+    margin-bottom: 8px;
+}
+.ai-answer strong {
+    color: #6c5ce7;
+    font-weight: 600;
+}
+.ai-answer .course-warning {
+    color: #e74c3c;
+    font-weight: 600;
+    padding: 10px;
+    border-left: 3px solid #e74c3c;
+    background-color: #ffeaea;
+    border-radius: 5px;
 }
 
 /* 状态栏 */
@@ -144,16 +197,91 @@ footer {
     color: #888;
     font-size: 0.9rem;
 }
+.footer-note {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: #aaa;
+}
 
-/* 让它在手机上也好看 */
-@media (max-width: 600px) {
+/* 模态框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.modal-header h3 {
+    color: #2d3436;
+    margin: 0;
+}
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #636e72;
+    line-height: 1;
+}
+.modal-close:hover {
+    color: #2d3436;
+}
+.modal-body {
+    line-height: 1.6;
+    color: #2d3436;
+}
+.outline-section {
+    margin-bottom: 20px;
+}
+.outline-section h4 {
+    color: #6c5ce7;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+.outline-section ul {
+    margin-left: 20px;
+    color: #555;
+}
+.outline-section li {
+    margin-bottom: 5px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
     .container {
         padding: 25px;
     }
     header h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .button-group {
         flex-direction: column;
+    }
+    .modal-content {
+        padding: 20px;
+        width: 95%;
     }
 }

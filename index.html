@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 学习助手</title>
+    <title>汽车电工电子技术 AI 学习助手</title>
     <!-- 链接到我们的样式文件 -->
     <link rel="stylesheet" href="style.css">
     <!-- 引入一个免费的图标库 -->
@@ -16,19 +16,28 @@
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-robot"></i> AI 学习助手</h1>
-            <p class="subtitle">输入你的问题，获取即时的AI解答与学习指导。</p>
+            <h1><i class="fas fa-car"></i> 汽车电工电子技术 AI 学习助手</h1>
+            <p class="subtitle">输入与课程相关的问题，获取即时的AI解答与学习指导。</p>
         </header>
 
         <main>
             <div class="input-area">
-                <textarea id="questionInput" placeholder="例如：请用简单的语言解释牛顿第一定律..."></textarea>
+                <textarea id="questionInput" placeholder="例如：请解释汽车直流电路中基尔霍夫定律的应用..."></textarea>
+                
+                <div class="course-hint">
+                    <i class="fas fa-lightbulb"></i> 
+                    提示：本助手专为《汽车电工电子技术》课程设计，只可以提问课程相关内容。
+                </div>
+                
                 <div class="button-group">
                     <button id="askButton" class="btn-primary">
                         <i class="fas fa-paper-plane"></i> 提问 AI
                     </button>
                     <button id="clearButton" class="btn-secondary">
                         <i class="fas fa-eraser"></i> 清空
+                    </button>
+                    <button id="outlineButton" class="btn-outline">
+                        <i class="fas fa-book"></i> 课程大纲
                     </button>
                 </div>
             </div>
@@ -45,8 +54,24 @@
         </main>
 
         <footer>
-            <p>本工具仅供学习使用。回答由AI模型生成，请谨慎参考。</p>
+            <p>本工具专为《汽车电工电子技术》课程设计。回答由AI模型生成，请谨慎参考。</p>
+            <p class="footer-note">请注意，提问内容受课程范围限制</p>
         </footer>
+    </div>
+
+    <!-- 课程大纲模态框 -->
+    <div id="outlineModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-book"></i> 汽车电工电子技术课程大纲</h3>
+                <button id="closeModal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="outlineContent">
+                    <!-- 大纲内容将通过JS动态填充 -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- 链接到我们的核心逻辑文件 -->
