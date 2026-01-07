@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 学习助手</title>
+    <!-- 链接到我们的样式文件 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入一个免费的图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 引入一个免费的字体，让文字更好看 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> AI 学习助手</h1>
+            <p class="subtitle">输入你的问题，获取即时的AI解答与学习指导。</p>
+        </header>
+
+        <main>
+            <div class="input-area">
+                <textarea id="questionInput" placeholder="例如：请用简单的语言解释牛顿第一定律..."></textarea>
+                <div class="button-group">
+                    <button id="askButton" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> 提问 AI
+                    </button>
+                    <button id="clearButton" class="btn-secondary">
+                        <i class="fas fa-eraser"></i> 清空
+                    </button>
+                </div>
+            </div>
+
+            <div class="response-area">
+                <h3><i class="fas fa-comment-dots"></i> AI 回复</h3>
+                <div id="answerDisplay">
+                    <p class="placeholder-text">AI的回复将显示在这里...</p>
+                </div>
+                <div class="status-bar" id="statusBar">
+                    就绪
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>本工具仅供学习使用。回答由AI模型生成，请谨慎参考。</p>
+        </footer>
+    </div>
+
+    <!-- 链接到我们的核心逻辑文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
