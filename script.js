@@ -283,7 +283,7 @@ async function callYourAIService(question) {
     
     const API_URL = 'https://apis.iflow.cn/v1/chat/completions';
     // ⚠️ 重要：将 YOUR_API_KEY_HERE 替换为你的实际API密钥
-    const API_KEY = 'sk-bba981e2aef2de5ea9ede1b189904fe5';
+    const API_KEY = 'sk-0b75784188f361cc59f3474ba175aa1d';
     
     try {
         console.log('发送请求到心流API...');
@@ -441,4 +441,5 @@ function updateStatus(message, type = 'info') {
 }
 
 // 页面加载完成后初始化
+
 document.addEventListener('DOMContentLoaded', init);
